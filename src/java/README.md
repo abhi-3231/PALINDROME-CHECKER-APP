@@ -1,14 +1,29 @@
-# Use Case 1 – Application Entry & Welcome Message
+# Palindrome Checker App
 
-## Description
-Initial entry point of the Palindrome Checker Application.
+This project demonstrates a use-case driven development approach using Git.
 
-## Functionality
+---
+
+## Use Case 1 – Application Entry & Welcome Message
+
+### Description
+This use case represents the entry point of the Palindrome Checker application.
+
+### Functionality
+- Starts execution from `main()`
 - Displays welcome message
-- Shows version
-- Initializes system
+- Shows application version
+- Initializes the system
 
-## Output
-Welcome to the Palindrome Checker Management System  
-Version : 1.0  
-System initialized successfully.
+---
+
+## Use Case 2 – Hardcoded Palindrome Validation
+
+### Description
+This use case validates whether a hardcoded string is a palindrome.
+
+### Functionality
+- Uses a predefined input string
+- Compares characters from both ends
+- Determines palindrome status
+- Displays result on console
