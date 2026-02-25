@@ -1,3 +1,5 @@
+package usecase2;
+
 /**
  * ============================================================
  * MAIN CLASS - UseCase2PalindromeCheckerApp
