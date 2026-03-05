@@ -1,0 +1,85 @@
+/**
+ * ============================================================
+ * MAIN CLASS – UseCase12PalindromeCheckerApp
+ * ============================================================
+ *
+ * Use Case 12: Strategy Pattern for Palindrome Algorithms
+ *
+ * Description:
+ * This class demonstrates how different palindrome
+ * validation algorithms can be selected dynamically
+ * at runtime using the Strategy Design Pattern.
+ *
+ * The application:
+ * - Defines a common PalindromeStrategy interface
+ * - Implements a concrete Stack-based strategy
+ * - Injects the strategy at runtime
+ * - Executes the selected algorithm
+ *
+ * @author Developer
+ * @version 12.0
+ */
+
+public class UseCase12PalindromeCheckerApp {
+
+    public static void main(String[] args) {
+
+        String input = "level";
+
+        // Select strategy
+        PalindromeStrategy strategy = new StackStrategy();
+
+        boolean result = strategy.check(input);
+
+        System.out.println("Input : " + input);
+        System.out.println("Is Palindrome? : " + result);
+    }
+}
+
+
+/**
+ * ============================================================
+ * INTERFACE – PalindromeStrategy
+ * ============================================================
+ *
+ * This interface defines a contract for all
+ * palindrome checking algorithms.
+ */
+
+interface PalindromeStrategy {
+
+    boolean check(String input);
+}
+
+
+/**
+ * ============================================================
+ * CLASS – StackStrategy
+ * ============================================================
+ *
+ * This class provides a Stack-based implementation
+ * of the PalindromeStrategy interface.
+ */
+
+class StackStrategy implements PalindromeStrategy {
+
+    public boolean check(String input) {
+
+        java.util.Stack<Character> stack = new java.util.Stack<>();
+
+        // Push characters
+        for (char c : input.toCharArray()) {
+            stack.push(c);
+        }
+
+        // Compare characters
+        for (char c : input.toCharArray()) {
+
+            if (c != stack.pop()) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+}
